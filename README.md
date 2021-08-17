@@ -4,9 +4,9 @@ Rangen is a suite of random generators and procedural generation tools; rangen-l
 
 ## TL;DR
 
-The lib provides you with 3 core functions:
+The lib provides you with 3 functions:
 
-- the `generateSentence()`: generates a simple sentence with random "latin-sounding" words
+- the `generateSentence()`: generates a simple sentence with random words
 - the `generateParagraph()`: generates a paragraph with a few Lorem ipsum sentences
 - the `generateText()`: generates a text with a few Lorem ipsum paragraphs
 
@@ -48,9 +48,9 @@ You can also use the CDN versions directly if you don't want to install anything
 <html lang="en">
 <head>
   <title>Rangen: Name - Demo</title>
-  <script src="https://unpkg.com/@mpecheux/rangen-loremipsum@0.1.0/dist/rangen-loremipsum.min.js"></script>
+  <script src="https://unpkg.com/@mpecheux/rangen-loremipsum@0.1.1/dist/rangen-loremipsum.min.js"></script>
   <!-- or:
-    <script src="https://cdn.jsdelivr.net/npm/@mpecheux/rangen-loremipsum@0.1.0/dist/rangen-loremipsum.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mpecheux/rangen-loremipsum@0.1.1/dist/rangen-loremipsum.min.js"></script>
   -->
 </head>
 <body>
