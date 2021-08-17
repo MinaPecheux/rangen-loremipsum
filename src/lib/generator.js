@@ -10,11 +10,13 @@ const DFT_MAX_PARAGRAPHS = 4;
 const generateSentence = ({
   minWords = DFT_MIN_WORDS,
   maxWords = DFT_MAX_WORDS,
+  wordsList = null,
 } = {}) => {
+  if (wordsList === null) wordsList = helpers.WORDS;
   const nWords = helpers.randomInt(minWords, maxWords);
   const words = [];
   for (let i = 0; i < nWords; i++)
-    words.push(helpers.getRandomItem(helpers.WORDS));
+    words.push(helpers.getRandomItem(wordsList));
   
   // apply title casing on sentence
   let sentence = words.join(" ");
@@ -26,11 +28,12 @@ const generateParagraph = ({
   maxWords = DFT_MAX_WORDS,
   minSentences = DFT_MIN_SENTENCES,
   maxSentences = DFT_MAX_SENTENCES,
+  wordsList = null,
 } = {}) => {
   const nSentences = helpers.randomInt(minSentences, maxSentences);
   const sentences = [];
   for (let i = 0; i < nSentences; i++)
-    sentences.push(generateSentence({ minWords, maxWords }));
+    sentences.push(generateSentence({ minWords, maxWords, wordsList }));
   
   return sentences.join(" ");
 };
@@ -42,11 +45,14 @@ const generateText = ({
   maxSentences = DFT_MAX_SENTENCES,
   minParagraphs = DFT_MIN_PARAGRAPHS,
   maxParagraphs = DFT_MAX_PARAGRAPHS,
+  wordsList = null,
 } = {}) => {
   const nParagraphs = helpers.randomInt(minParagraphs, maxParagraphs);
   const paragraphs = [];
   for (let i = 0; i < nParagraphs; i++)
-    paragraphs.push(generateParagraph({ minWords, maxWords, minSentences, maxSentences }));
+    paragraphs.push(generateParagraph({
+      minWords, maxWords, minSentences, maxSentences, wordsList
+    }));
   
   return paragraphs.join("\n\n");
 };
